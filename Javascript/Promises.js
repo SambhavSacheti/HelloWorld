@@ -1,18 +1,39 @@
-// an immediately resolved promise
-var p2 = Promise.resolve("foo"); 
+/* ES6 
+code taken from https://scotch.io/tutorials/javascript-promises-for-dummies
+*/
+const isMomHappy = false;
 
-// can get it after the fact, unlike events
-p2.then((res) => console.log(res)); 
+// Promise
+const willIGetNewPhone = new Promise(
+    (resolve, reject) => { // fat arrow
+        if (isMomHappy) {
+            const phone = {
+                brand: 'Samsung',
+                color: 'black'
+            };
+            resolve(phone);
+        } else {
+            const reason = new Error('mom is not happy');
+            reject(reason);
+        }
 
-var p = new Promise(function(resolve, reject) {  
-   setTimeout(() => resolve(4), 2000);
-});
+    }
+);
 
-// handler can't change promise, just value
-p.then((res) => {  
-  res += 2;  
-  console.log(res);
-});
+const showOff = function (phone) {
+    const message = 'Hey friend, I have a new ' +
+                phone.color + ' ' + phone.brand + ' phone';
+    return Promise.resolve(message);
+};
 
-// still gets 4
-p.then((res) => console.log(res)); 
+// call our promise
+const askMom = function () {
+  console.log("before asking mom");
+    willIGetNewPhone
+        .then(showOff)
+        .then(fulfilled => console.log(fulfilled)) // fat arrow
+        .catch(error => console.log(error.message)); // fat arrow
+  console.log("after asking mom");
+};
+
+askMom();
