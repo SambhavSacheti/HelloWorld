@@ -1,7 +1,8 @@
 /* ES6 
 code taken from https://scotch.io/tutorials/javascript-promises-for-dummies
 */
-const isMomHappy = false;
+// Mom is happy = true, Mom is not happy =  false
+const isMomHappy = true;
 
 // Promise
 const willIGetNewPhone = new Promise(
@@ -36,4 +37,10 @@ const askMom = function () {
   console.log("after asking mom");
 };
 
+try{
 askMom();
+}
+catch(error)
+{
+  console.log(error.message);
+}
