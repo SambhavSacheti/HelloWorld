@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Canvas example</title>
+    <style>
+        body {
+            background-color: powderblue;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        canvas {
+            Border: 1px dashed black
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //drawCanvas1();
+            drawCanvas2();
+        }
+
+        function drawCanvas1() {
+            let canvas = document.getElementById("drawingCanvas1");
+            let context = canvas.getContext("2d");
+
+            // Set the line width and color (for all the lines).
+            context.lineWidth = 20;
+            context.strokeStyle = "rgb(205,40,40)";
+            // Draw the first line, with the standard butt ending.
+            context.moveTo(10, 50);
+            context.lineTo(400, 50);
+            context.lineCap = "butt";
+            context.stroke();
+            // Draw the second line, with a round cap.
+            context.beginPath();
+            context.moveTo(10, 120);
+            context.lineTo(400, 120);
+            context.lineCap = "round";
+            context.stroke();
+
+            // Draw the third line, with a square cap.
+            context.beginPath();
+            context.moveTo(10, 190);
+            context.lineTo(400, 190);
+            context.lineCap = "square";
+            context.stroke();
+        }
+
+        function drawCanvas2() {
+            let canvas = document.getElementById("drawingCanvas1");
+            let context = canvas.getContext("2d");
+            context.moveTo(250, 50);
+            context.lineTo(50, 250);
+            context.lineTo(450, 250);
+            context.lineTo(250, 50);
+            context.lineWidth = 10;
+            context.strokeStyle = "red";
+            context.stroke();
+            context.closePath();
+            context.fillStyle = "blue";
+            context.fill();
+        }
+
+    </script>
+
+</head>
+<header>
+    <h1>Lets play with the canvas!</h1>
+</header>
+
+<body>
+    <canvas id="drawingCanvas1" width="500" height="300" />
+
+
+</body>
+
+</html>
