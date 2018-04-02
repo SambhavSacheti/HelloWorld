@@ -1,0 +1,17 @@
+{
+  "name": "image_video",
+  "version": "1.0.0",
+  "description": "",
+  "main": "image_video_demo.js",
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "light": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

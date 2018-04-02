@@ -1,0 +1,10 @@
+h2{
+color: rgb(10,10,100);
+background: rgb(200,200,100);
+};
+button{
+color: gray;
+};
+#drawingCanvas{
+    border: 1px solid black;
+};
