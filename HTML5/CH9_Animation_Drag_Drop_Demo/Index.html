@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Animation</title>
+
+<style>
+body {
+  font-family: Verdana;
+  font-size: small;
+  background:lightgrey;
+}
+canvas {
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+div {
+  margin: 15px 0px;
+}
+
+button {
+  padding: 4px 10px;
+}
+
+input[type=number] {
+  width: 50px;
+  margin-right: 15px;
+}
+
+aside{
+  float: left;
+}
+
+article {
+    margin-left: 10px;
+    border-left: 1px solid gray;    
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+<script src="animation.js" ></script>
+
+  
+</head>
+
+<body>
+
+<header><h1>Improvised version of animation code from HTML5: The Missing Manual, 2nd Edition  </h1></header>
+<aside>
+  <canvas id="canvas" width="400" height="300">
+  </canvas>
+
+  <div>
+    <button onclick="addBall()">Add Ball</button>
+    <button onclick="clearBalls()">Clear Canvas</button>
+  </div>
+  <div>
+    <b>Ball Size:</b><input id="ballSize" type="number" min="0" max="50" value="15">
+    <input id="connectedBalls" type="checkbox"><b>Balls</b><br>    
+  </div>
+</aside>
+<article>
+  <h2>Requirements</h2>
+  <ol>
+  <li>On Page load, a blank Canvas should be displayed</li>
+  <li>Add Ball button do the following
+    <ol type="a">
+      <li>Takes the radius from the Ball Size number box</li></li>
+      <li>push the ball (details) to the Balls array</li>
+    </ol>
+    <li>The Draw Frame function is the heart of this animation </li>
+    <li>Added code to the onmousemove and mouseup event of Canvas element. To detech Dragging of circles</li>  
+</ol>
+</article>
+</body>
+</html>
